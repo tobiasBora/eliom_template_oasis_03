@@ -22,3 +22,4 @@
 <src/client/*.ml{,i}>: package(eliom.client)
 # OASIS_STOP
 true: thread
+<**/*.js>: predicate(jsoo_weak)
