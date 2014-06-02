@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 135ed6a35aeb92b8193af06cdf0291f3)
+version = "1.0"
+description = "des"
+requires = "eliom.server"
+archive(byte) = "monproj.cma"
+archive(byte, plugin) = "monproj.cma"
+archive(native) = "monproj.cmxa"
+archive(native, plugin) = "monproj.cmxs"
+exists_if = "monproj.cma"
+# OASIS_STOP
+
