@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: e66ae61d531cf87af599ccb2170c6e21)
+# DO NOT EDIT (digest: bdae8298e8b22fb817c4aa909d5983bd)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -14,23 +14,17 @@
 "_darcs": -traverse
 "_darcs": not_hygienic
 # Library monproj
-"src/main/server/monproj.cmxs": use_monproj
-<src/main/server/*.ml{,i}>: package(eliom.server)
-<src/main/server/*.ml{,i}>: package(lwt)
-# Library monproj-client
-"src/main/client/monproj-client.cmxs": use_monproj-client
-<src/main/client/*.ml{,i}>: package(eliom.client)
-<src/main/client/*.ml{,i}>: package(lwt)
+"src/server/monproj.cmxs": use_monproj
+<src/server/*.ml{,i}>: package(eliom.server)
+<src/server/*.ml{,i}>: package(lwt)
 # Executable monproj
 "src/client/monproj.byte": package(eliom.client)
 "src/client/monproj.byte": package(lwt)
-"src/client/monproj.byte": use_monproj-client
 <src/client/*.ml{,i}>: package(eliom.client)
 <src/client/*.ml{,i}>: package(lwt)
-<src/client/*.ml{,i}>: use_monproj-client
 # OASIS_STOP
-<src/main/server/*.ml{,i}>: thread
-<src/main/type/*.ml{,i}>: thread
+<src/server/*.ml{,i}>: thread
+<src/type/*.ml{,i}>: thread
 <**/*.eliom>: no_extra_syntaxes, package(js_of_ocaml.syntax), package(js_of_ocaml.deriving.syntax)
 <src/client/monproj.byte>:linkall
 "src/client/monproj.js": package(eliom.client)

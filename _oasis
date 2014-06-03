@@ -12,7 +12,7 @@ XOCamlbuildPluginTags: package(eliom.ocamlbuild)
 OCamlVersion: >= 4.01
 
 Library "monproj"
-  Path: src/main/server# the .eliom files are in fact located in src
+  Path: src/server# the .eliom files are in fact located in src
 # but specifying server/ is nececary for knowing that it is the server
 # part we include here
   Modules:
@@ -22,27 +22,13 @@ Library "monproj"
     eliom.server,
     lwt
 
-Library "monproj-client"
-  FindlibName: client
-  FindlibParent: monproj
-  Path: src/main/client# the .eliom files are in fact located in src
-# but specifying server/ is nececary for knowing that it is the server
-# part we include here
-  Modules: An_eliom_file
-  BuildDepends:
-    eliom.client,
-    lwt
-  DataFiles:
-    ../../_build/src/client/monproj.js # If you want to install the .js
-
-
 Executable "monproj"
   Install: false # We usally don't want to install the .byte
   Path: src/client
-  MainIs: monproj.ml # the main file. It should refere to every modules
-# you use for this program (.eliom included)
+  MainIs: monproj.ml # you should list modules in src/client/monproj.mlpack
   BuildDepends:
-    monproj.client,
     eliom.client,
     lwt
   CompiledObject: byte # because a js executable only needs the bytecode
+  DataFiles:
+    ../../_build/src/client/monproj.js # If you want to install the .js
