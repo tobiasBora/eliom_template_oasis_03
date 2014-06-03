@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: bdae8298e8b22fb817c4aa909d5983bd)
+# DO NOT EDIT (digest: bacdd581e2f733468e77a299f18627e6)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -14,9 +14,9 @@
 "_darcs": -traverse
 "_darcs": not_hygienic
 # Library monproj
-"src/server/monproj.cmxs": use_monproj
-<src/server/*.ml{,i}>: package(eliom.server)
-<src/server/*.ml{,i}>: package(lwt)
+"src/hello/server/monproj.cmxs": use_monproj
+<src/hello/server/*.ml{,i}>: package(eliom.server)
+<src/hello/server/*.ml{,i}>: package(lwt)
 # Executable monproj
 "src/client/monproj.byte": package(eliom.client)
 "src/client/monproj.byte": package(lwt)
@@ -25,6 +25,10 @@
 # OASIS_STOP
 <src/server/*.ml{,i}>: thread
 <src/type/*.ml{,i}>: thread
+
+<src/hello/server/*.ml{,i}>: thread
+<src/hello/type/*.ml{,i}>: thread
+
 <**/*.eliom>: no_extra_syntaxes, package(js_of_ocaml.syntax), package(js_of_ocaml.deriving.syntax)
 <src/client/monproj.byte>:linkall
 "src/client/monproj.js": package(eliom.client)

@@ -12,7 +12,7 @@ XOCamlbuildPluginTags: package(eliom.ocamlbuild)
 OCamlVersion: >= 4.01
 
 Library "monproj"
-  Path: src/server# the .eliom files are in fact located in src
+  Path: src/hello/server# the .eliom files are in fact located in src
 # but specifying server/ is nececary for knowing that it is the server
 # part we include here
   Modules:
